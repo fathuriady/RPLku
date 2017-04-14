@@ -22,7 +22,7 @@
         android:layout_below="@+id/imgLogo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:text="Resep"
+        android:text="Stok Barang"
         />
 
     <Button
