@@ -104,12 +104,9 @@ public class LresepActivity extends AppCompatActivity implements View.OnClickLis
         if(v == btnPindahTambah){
             Intent i = new Intent(this,TambahDataActivity.class);
             startActivity(i);
+            finish();
         }
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        startActivity(new Intent(this,MainActivity.class));
-    }
+
 }
