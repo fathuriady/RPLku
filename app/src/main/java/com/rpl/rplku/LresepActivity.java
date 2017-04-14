@@ -1,6 +1,7 @@
 package com.rpl.rplku;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -23,16 +25,19 @@ import java.util.HashMap;
  * Created by User on 4/9/2017.
  */
 
-public class LresepActivity extends AppCompatActivity {
+public class LresepActivity extends AppCompatActivity implements View.OnClickListener {
     private ListView lvItem;
     private String JSON_STRING;
+    private Button btnPindahTambah;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lresep);
         lvItem = (ListView)findViewById(R.id.listView);
+        btnPindahTambah = (Button) findViewById(R.id.btnPindahTambah);
         getJSON();
+        btnPindahTambah.setOnClickListener(this);
     }
 
     private void showBarang(){
@@ -92,5 +97,19 @@ public class LresepActivity extends AppCompatActivity {
         }
         GetJSON gj= new GetJSON();
         gj.execute();
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v == btnPindahTambah){
+            Intent i = new Intent(this,TambahDataActivity.class);
+            startActivity(i);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this,MainActivity.class));
     }
 }

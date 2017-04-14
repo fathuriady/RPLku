@@ -18,6 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".LresepActivity"/>
+        <activity android:name=".TambahDataActivity"/>
+        <activity android:name=".TentangActivity"/>
     </application>
 
 </manifest>

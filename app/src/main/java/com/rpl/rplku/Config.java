@@ -15,8 +15,8 @@ public class Config {
 
     //Key buat request ke PHP Script
     public static final String KEY_BARANG_ID = "id";
-    public static final String KEY_BARANG_NAMA = "nama";
-    public static final String KEY_BARANG_JML = "jml";
+    public static final String KEY_BARANG_NAMA = "namabarang";
+    public static final String KEY_BARANG_JML = "jmlbarang";
 
     //Tag JSON
     public static final String TAG_JSON_ARRAY = "result";

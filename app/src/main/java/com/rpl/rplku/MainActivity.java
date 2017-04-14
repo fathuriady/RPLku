@@ -6,8 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
-    protected Button btnResep;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    private Button btnResep,btnTentang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,13 +15,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnResep = (Button)findViewById(R.id.btnResep);
-        btnResep.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),LresepActivity.class);
-                startActivity(i);
-            }
-        });
+        btnTentang = (Button)findViewById(R.id.btnTentang);
 
+        btnTentang.setOnClickListener(this);
+        btnResep.setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v==btnResep){
+            startActivity(new Intent(this,LresepActivity.class));
+        }
+
+        if(v==btnTentang){
+            startActivity(new Intent(this,TentangActivity.class));
+        }
     }
 }
