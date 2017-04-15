@@ -7,13 +7,10 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -36,9 +33,13 @@ public class LresepActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_lresep);
         lvItem = (ListView)findViewById(R.id.listView);
         btnPindahTambah = (Button) findViewById(R.id.btnPindahTambah);
+
         getJSON();
+
         btnPindahTambah.setOnClickListener(this);
+
     }
+
 
     private void showBarang(){
         JSONObject jsonObject = null;
