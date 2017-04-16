@@ -155,7 +155,8 @@ public class LihatData extends AppCompatActivity implements View.OnClickListener
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(LihatData.this, "Updating...", "Wait...", false, false);
+                loading = ProgressDialog.show(LihatData.this, "Updating...", "Wait...",true,false
+                );
             }
 
             @Override
@@ -187,6 +188,7 @@ public class LihatData extends AppCompatActivity implements View.OnClickListener
                     public void onClick(DialogInterface arg0, int arg1) {
                         deleteBarang();
                         startActivity(new Intent(LihatData.this,LresepActivity.class));
+                        finish();
                     }
                 });
 
