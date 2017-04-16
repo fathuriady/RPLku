@@ -27,7 +27,7 @@ import java.util.HashMap;
 public class LresepActivity extends AppCompatActivity implements View.OnClickListener,ListView.OnItemClickListener {
     private ListView lvItem;
     private String JSON_STRING;
-    private Button btnPindahTambah;
+    private Button btnPindahTambah,btnRefresh;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,11 +35,11 @@ public class LresepActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_lresep);
         lvItem = (ListView)findViewById(R.id.listView);
         btnPindahTambah = (Button) findViewById(R.id.btnPindahTambah);
-
+        btnRefresh = (Button)findViewById(R.id.btnRefresh);
         getJSON();
         lvItem.setOnItemClickListener(this);
         btnPindahTambah.setOnClickListener(this);
-
+        btnRefresh.setOnClickListener(this);
     }
 
 
@@ -109,6 +109,11 @@ public class LresepActivity extends AppCompatActivity implements View.OnClickLis
         if(v == btnPindahTambah){
             Intent i = new Intent(this,TambahDataActivity.class);
             startActivity(i);
+            finish();
+        }
+
+        if(v== btnRefresh){
+            startActivity(new Intent(this,LresepActivity.class));
             finish();
         }
     }
