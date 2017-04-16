@@ -7,10 +7,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -22,7 +24,7 @@ import java.util.HashMap;
  * Created by User on 4/9/2017.
  */
 
-public class LresepActivity extends AppCompatActivity implements View.OnClickListener {
+public class LresepActivity extends AppCompatActivity implements View.OnClickListener,ListView.OnItemClickListener {
     private ListView lvItem;
     private String JSON_STRING;
     private Button btnPindahTambah;
@@ -35,7 +37,7 @@ public class LresepActivity extends AppCompatActivity implements View.OnClickLis
         btnPindahTambah = (Button) findViewById(R.id.btnPindahTambah);
 
         getJSON();
-
+        lvItem.setOnItemClickListener(this);
         btnPindahTambah.setOnClickListener(this);
 
     }
@@ -50,11 +52,13 @@ public class LresepActivity extends AppCompatActivity implements View.OnClickLis
 
             for(int i = 0;i<result.length();i++){
                 JSONObject jo = result.getJSONObject(i);
+                String id = jo.getString(Config.TAG_ID);
                 String nama = jo.getString(Config.TAG_NAMA_BARANG);
                 String jml = jo.getString(Config.TAG_JML_BARANG);
 
 
                 HashMap<String,String> barang = new HashMap<>();
+                barang.put(Config.TAG_ID,id);
                 barang.put(Config.TAG_NAMA_BARANG,nama);
                 barang.put(Config.TAG_JML_BARANG,jml);
 
@@ -109,5 +113,14 @@ public class LresepActivity extends AppCompatActivity implements View.OnClickLis
         }
     }
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(LresepActivity.this, LihatData.class);
+        HashMap map =(HashMap)parent.getItemAtPosition(position);
+        String brgId = map.get(Config.TAG_ID).toString();
+        intent.putExtra(Config.BARANG_ID,brgId);
+        startActivity(intent);
 
+        //Toast.makeText(this,"Anda mengklik "+map,Toast.LENGTH_LONG).show();
+    }
 }

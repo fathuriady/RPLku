@@ -26,6 +26,8 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".TentangActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name=".LihatData"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
