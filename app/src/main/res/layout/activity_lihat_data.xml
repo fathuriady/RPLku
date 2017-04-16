@@ -53,5 +53,10 @@
         android:layout_height="wrap_content"
         android:text="Delete Data"
         />
+    <Button
+        android:id="@+id/btnLihatData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lihat Data"/>
 
 </LinearLayout>

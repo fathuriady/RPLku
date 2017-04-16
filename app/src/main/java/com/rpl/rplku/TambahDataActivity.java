@@ -83,4 +83,11 @@ public class TambahDataActivity extends AppCompatActivity implements View.OnClic
             tambahData();
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this,LresepActivity.class));
+        finish();
+    }
 }

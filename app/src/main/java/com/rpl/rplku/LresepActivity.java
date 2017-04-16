@@ -120,6 +120,7 @@ public class LresepActivity extends AppCompatActivity implements View.OnClickLis
         String brgId = map.get(Config.TAG_ID).toString();
         intent.putExtra(Config.BARANG_ID,brgId);
         startActivity(intent);
+        finish();
 
         //Toast.makeText(this,"Anda mengklik "+map,Toast.LENGTH_LONG).show();
     }

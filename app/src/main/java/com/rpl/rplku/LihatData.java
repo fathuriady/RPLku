@@ -38,6 +38,8 @@ public class LihatData extends AppCompatActivity implements View.OnClickListener
     private Button btnUpdate;
     private Button btnDelete;
 
+    private Button btnLihatData;
+
     private String id;
 
     @Override
@@ -55,10 +57,10 @@ public class LihatData extends AppCompatActivity implements View.OnClickListener
 
         btnUpdate = (Button) findViewById(R.id.btnUpdateData);
         btnDelete = (Button) findViewById(R.id.btnDeleteData);
-
+        btnLihatData = (Button)findViewById(R.id.btnLihatData);
         btnUpdate.setOnClickListener(this);
         btnDelete.setOnClickListener(this);
-
+        btnLihatData.setOnClickListener(this);
         txtId.setText(id);
 
         getBarang();
@@ -209,9 +211,19 @@ public class LihatData extends AppCompatActivity implements View.OnClickListener
         if(v == btnDelete){
             confirmDeleteBarang();
         }
+
+        if(v== btnLihatData){
+            startActivity(new Intent(this,LresepActivity.class));
+            finish();
+        }
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this,LresepActivity.class));
+        finish();
+    }
 }
 
 
