@@ -31,16 +31,24 @@
         />
     
     <Button
+        android:layout_marginTop="10dp"
         android:id="@+id/btnTambahData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tambah Data"/>
+        android:text="Tambah Data"
+        android:background="@color/colorPrimary"
+        android:textColor="#fff"
+        />
 
     <Button
+        android:layout_marginTop="10dp"
         android:id="@+id/btnPindahListV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Lihat Data"
+        android:background="@color/colorPrimary"
+        android:textColor="#fff"
+
         />
 
 </LinearLayout>

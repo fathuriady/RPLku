@@ -188,7 +188,6 @@ public class LihatData extends AppCompatActivity implements View.OnClickListener
                     public void onClick(DialogInterface arg0, int arg1) {
                         deleteBarang();
                         startActivity(new Intent(LihatData.this,LresepActivity.class));
-                        finish();
                     }
                 });
 
