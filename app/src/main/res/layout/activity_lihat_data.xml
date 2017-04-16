@@ -42,21 +42,31 @@
         />
 
     <Button
+        android:layout_marginTop="10dp"
         android:id="@+id/btnUpdateData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Update Data"/>
+        android:text="Update Data"
+        android:background="@color/colorPrimary"
+        android:textColor="#fff"
+        />
 
     <Button
+        android:layout_marginTop="10dp"
         android:id="@+id/btnDeleteData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Delete Data"
+        android:background="@color/colorPrimary"
+        android:textColor="#fff"
         />
     <Button
+        android:layout_marginTop="10dp"
         android:id="@+id/btnLihatData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lihat Data"/>
+        android:text="Lihat Data"
+        android:background="@color/colorPrimary"
+        android:textColor="#fff" />
 
 </LinearLayout>
