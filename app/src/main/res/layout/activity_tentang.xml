@@ -4,10 +4,20 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/txtMe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Another Fathuriady's Project © 2017"
+        android:textAlignment="center"
         android:layout_centerInParent="true"
-        android:text="Another Fathuriady Project © 2017"
+        android:textSize="22dp"
+        />
+
+    <TextView
+        android:layout_below="@+id/txtMe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ConnectOn © 2017"
         android:textAlignment="center"
         android:textSize="22dp"
         />
